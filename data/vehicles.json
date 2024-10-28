@@ -1,0 +1,21 @@
+[ {
+  "matricula" : "0007-BND",
+  "marca" : "Volvo",
+  "modelo" : "S50",
+  "añoCompra" : 2019
+}, {
+  "matricula" : "1234-XYZ",
+  "marca" : "Ford",
+  "modelo" : "Fiesta",
+  "añoCompra" : 2015
+}, {
+  "matricula" : "5632-WCT",
+  "marca" : "Toyota",
+  "modelo" : "Rav 4",
+  "añoCompra" : 2015
+}, {
+  "matricula" : "6789-ADT",
+  "marca" : "Volkswagen",
+  "modelo" : "Golf",
+  "añoCompra" : 2024
+} ]
