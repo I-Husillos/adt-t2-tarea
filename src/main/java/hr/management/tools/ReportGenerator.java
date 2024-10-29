@@ -17,10 +17,19 @@ public class ReportGenerator {
             fileWriter.write("Informe de empleados con vehículos asignados\n");
             fileWriter.write("===========================================\n");
 
+             = empleados.toString();
             for (Employee employee: empleados){
-                fileWriter.write(employee.toString());
-                fileWriter.write("\n");
-                fileWriter.write("===========================================\n");
+                if (employee.getVehiclePlate() != null && !employee.getVehiclePlate().equals("Ninguno")){
+                    fileWriter.write(employee.toString());
+
+                    if(){
+
+                    }
+
+                    fileWriter.write("\n");
+                    fileWriter.write("===========================================\n");
+                }
+
             }
 
             fileWriter.close();

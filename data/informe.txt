@@ -1,0 +1,6 @@
+Informe de empleados con vehículos asignados
+===========================================
+Empleado [DNI: 12345678A, Nombre: James Bond, Año Contratado: 2006, Matrícula del Vehículo: 0007-BND]
+===========================================
+Empleado [DNI: 87654321B, Nombre: John Doe, Año Contratado: 2018, Matrícula del Vehículo: 6789-ADT]
+===========================================

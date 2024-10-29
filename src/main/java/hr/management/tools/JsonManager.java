@@ -21,15 +21,17 @@ public class JsonManager {
 
     }
 
-    public static ArrayList<Employee> loadEmployeesFromJson(String ruta){
+    public static ArrayList<Employee> loadEmployeesFromJson(String ruta) {
         try {
+            System.out.println("Cargando empleados desde: " + ruta);
             ArrayList<Employee> employees = objectMapper.readValue(new File(ruta),
                     objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, Employee.class)
             );
-
+            System.out.println("Empleados cargados: " + employees.size());
             return employees;
         } catch (IOException e) {
-            return  new ArrayList<>();
+            e.printStackTrace();
+            return new ArrayList<>();
         }
     }
 

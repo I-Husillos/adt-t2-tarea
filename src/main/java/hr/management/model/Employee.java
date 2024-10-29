@@ -20,6 +20,8 @@ public class Employee {
         this.vehiclePlate = vehiclePlate;
     }
 
+    public Employee() {
+    }
 
     public void assignVehicleWithPlate(String vehiclePlate){
         this.vehiclePlate = vehiclePlate;
