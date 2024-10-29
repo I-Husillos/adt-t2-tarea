@@ -21,7 +21,7 @@ public class JsonManager {
 
     }
 
-    public ArrayList<Employee> loadEmployeesFromJson(String ruta){
+    public static ArrayList<Employee> loadEmployeesFromJson(String ruta){
         try {
             ArrayList<Employee> employees = objectMapper.readValue(new File(ruta),
                     objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, Employee.class)
@@ -44,7 +44,7 @@ public class JsonManager {
         }
     }
 
-    public ArrayList<Vehicle> loadVehiclesFromJson(String ruta){
+    public static ArrayList<Vehicle> loadVehiclesFromJson(String ruta){
         try {
             ArrayList<Vehicle> vehicles = objectMapper.readValue(new File(ruta),
                     objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, Vehicle.class));
@@ -55,3 +55,4 @@ public class JsonManager {
         }
     }
 }
+

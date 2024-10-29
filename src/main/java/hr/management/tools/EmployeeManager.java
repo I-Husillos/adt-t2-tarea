@@ -39,21 +39,21 @@ public class EmployeeManager {
         }*/
     }
 
-    public Vehicle findVehicleByPlate(String plate){
+    public Vehicle findVehicleByPlate(Vehicle plate){
         for(Vehicle vehicle: vehiculos){
-            if (vehicle.getPlate().contains(plate)){
+            if (vehicle.getPlate().contains(plate.getPlate())){
                 return vehicle;
             }
         }
         return null;
     }
 
-    public boolean assignVehicleToEmployee(String dni, String plate){
+    public boolean assignVehicleToEmployee(String dni, Vehicle plate){
         Employee employee = findEmployeeByDni(dni);
         Vehicle vehicle = findVehicleByPlate(plate);
 
         if (employee!=null && vehicle!=null){
-            employee.assignVehicleWithPlate(plate);
+            employee.assignVehicleWithPlate(plate.getPlate());
             return true;
         }
         return false;
