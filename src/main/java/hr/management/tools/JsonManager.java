@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class JsonManager {
     static ObjectMapper objectMapper = new ObjectMapper();
 
-    public boolean saveEmployeesToJson(ArrayList<Employee> employees,String ruta){
+    public static boolean saveEmployeesToJson(ArrayList<Employee> employees, String ruta){
         try {
             objectMapper.writeValue(new File(ruta),employees);
             return true;
@@ -36,7 +36,7 @@ public class JsonManager {
     }
 
 
-    public boolean saveVehiclesToJson(ArrayList<Vehicle> vehicles, String ruta){
+    public static boolean saveVehiclesToJson(ArrayList<Vehicle> vehicles, String ruta){
         try {
             objectMapper.writeValue(new File(ruta), vehicles);
 
@@ -53,6 +53,7 @@ public class JsonManager {
 
             return vehicles;
         } catch (IOException e) {
+            e.printStackTrace();
             return new ArrayList<>();
         }
     }

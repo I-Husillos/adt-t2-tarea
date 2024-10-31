@@ -1,9 +1,16 @@
 package hr.management.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Vehicle {
+
+    @JsonProperty("matricula")
     String plate;
+    @JsonProperty("marca")
     String brand;
+    @JsonProperty("modelo")
     String model;
+    @JsonProperty("añoCompra")
     int yearBought;
 
     public Vehicle(String plate, String brand, String model, int yearBought) {
@@ -13,7 +20,8 @@ public class Vehicle {
         this.yearBought = yearBought;
     }
 
-
+    public Vehicle() {
+    }
 
     public String getPlate() {
         return plate;
