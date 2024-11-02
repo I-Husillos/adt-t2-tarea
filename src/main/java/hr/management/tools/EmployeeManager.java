@@ -98,5 +98,26 @@ public class EmployeeManager {
 
     }
 
+    /*
+    * removeEmployee: Acepta un dni que pertenece a un empleado que deberá borrar de la lista actual. Deberá ocuparse de eliminar la carpeta asociada a este empleado que se encontrará dentro de la carpeta data. Si logra eliminar el empleado, imprime "Empleado con DNI " + dni + " eliminado de la lista.". Dado que también tiene que eliminar la carpeta, imprimirá "Carpeta del empleado con DNI " + dni + " eliminada." o "La carpeta del empleado con DNI " + dni + " no existe." en su caso.
+    * */
+
+    public void removeEmployee(String dni){
+        Employee employee = findEmployeeByDni(dni);
+        if (employee!=null){
+            empleados.remove(employee);
+            File folder = new File("./data/employeeDocuments/" + dni);
+            if (folder.exists()){
+                folder.delete();
+                System.out.println("Carpeta del empleado con DNI " + dni + " eliminada.");
+            } else {
+                System.out.println("La carpeta del empleado con DNI " + dni + " no existe.");
+            }
+        } else {
+            System.out.println("Empleado con DNI " + dni + " no encontrado.");
+        }
+    }
+
+
 }
 

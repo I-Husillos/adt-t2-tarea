@@ -11,9 +11,6 @@ public class Main {
         ArrayList<Employee> employees = JsonManager.loadEmployeesFromJson("./data/employees.json");
         ArrayList<Vehicle> vehicles = JsonManager.loadVehiclesFromJson("./data/vehicles.json");
 
-        System.out.println(employees.size());
-        System.out.println(vehicles.size());
-
 
         // 2. Añadir un vehículo desde el archivo newVehicle1.xml
             Vehicle newVehicle = XmlManager.readVehicleFromXml("./data/newVehicle.xml");
