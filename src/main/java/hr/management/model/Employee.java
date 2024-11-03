@@ -20,6 +20,12 @@ public class Employee {
         this.vehiclePlate = vehiclePlate;
     }
 
+    public Employee(String dni, String name, int yearHired) {
+        this.dni = dni;
+        this.name = name;
+        this.yearHired = yearHired;
+    }
+
     public Employee() {
     }
 

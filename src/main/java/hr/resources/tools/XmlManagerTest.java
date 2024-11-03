@@ -1,9 +1,8 @@
 package hr.resources.tools;
 
-
 import hr.management.model.Vehicle;
 import hr.management.tools.XmlManager;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.io.File;
 import java.nio.file.Files;

@@ -22,38 +22,23 @@ public class EmployeeManager {
             }
         }
         return null;
-
-        /*try {
-            FileReader reader = new FileReader("./data/employees.json");
-            BufferedReader linea = new BufferedReader(reader);
-            String text = linea.readLine();
-            while (linea.ready()) {
-                if (text.contains(dni)){
-
-                }
-            }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }*/
     }
 
-    public Vehicle findVehicleByPlate(Vehicle plate){
+    public Vehicle findVehicleByPlate(String plate){
         for(Vehicle vehicle: vehiculos){
-            if (vehicle.getPlate().contains(plate.getPlate())){
+            if (vehicle.getPlate().contains(plate)){
                 return vehicle;
             }
         }
         return null;
     }
 
-    public boolean assignVehicleToEmployee(String dni, Vehicle plate){
+    public boolean assignVehicleToEmployee(String dni, String plate){
         Employee employee = findEmployeeByDni(dni);
         Vehicle vehicle = findVehicleByPlate(plate);
 
         if (employee!=null && vehicle!=null){
-            employee.assignVehicleWithPlate(plate.getPlate());
+            employee.assignVehicleWithPlate(plate);
             return true;
         }
         return false;
@@ -98,26 +83,33 @@ public class EmployeeManager {
 
     }
 
-    /*
-    * removeEmployee: Acepta un dni que pertenece a un empleado que deberá borrar de la lista actual. Deberá ocuparse de eliminar la carpeta asociada a este empleado que se encontrará dentro de la carpeta data. Si logra eliminar el empleado, imprime "Empleado con DNI " + dni + " eliminado de la lista.". Dado que también tiene que eliminar la carpeta, imprimirá "Carpeta del empleado con DNI " + dni + " eliminada." o "La carpeta del empleado con DNI " + dni + " no existe." en su caso.
-    * */
-
     public void removeEmployee(String dni){
         Employee employee = findEmployeeByDni(dni);
-        if (employee!=null){
+        if (employee!= null){
             empleados.remove(employee);
-            File folder = new File("./data/employeeDocuments/" + dni);
-            if (folder.exists()){
-                folder.delete();
-                System.out.println("Carpeta del empleado con DNI " + dni + " eliminada.");
-            } else {
-                System.out.println("La carpeta del empleado con DNI " + dni + " no existe.");
-            }
+            deleteFolder(new File("./data/employeeDocuments/" + dni));
+            System.out.println("Empleado con DNI " + dni + " eliminado de la lista.");
+            System.out.println("Carpeta del empleado con DNI " + dni + " eliminada.");
         } else {
-            System.out.println("Empleado con DNI " + dni + " no encontrado.");
+            System.out.println("La carpeta del empleado con DNI " + dni + " no existe.");
         }
     }
 
 
+    public void deleteFolder(File folder) {
+        if (folder.exists()) {
+            File[] files = folder.listFiles();
+            if (files!= null) {
+                for (File file : files) {
+                    if (file.isDirectory()) {
+                        deleteFolder(file);
+                    } else {
+                        file.delete();
+                    }
+                }
+            }
+            folder.delete();
+        }
+    }
 }
 

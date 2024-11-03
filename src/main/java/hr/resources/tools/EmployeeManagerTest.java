@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertNull;
 
 public class EmployeeManagerTest {
 
@@ -62,6 +64,7 @@ public class EmployeeManagerTest {
         boolean success = manager.unassignVehicleFromEmployee("12345678A");
         assertTrue(success);
         assertNull(employee.getVehiclePlate());  // El vehículo debe ser desasignado
+
     }
 
     @Test
@@ -150,7 +153,7 @@ public class EmployeeManagerTest {
         ArrayList<Vehicle> vehicles = new ArrayList<>();
 
         // Crear un directorio simulado para cada empleado
-        File employeeDocumentsDir = new File("data/employeeDocuments");
+        File employeeDocumentsDir = new File("./data/employeeDocuments");
         if (!employeeDocumentsDir.exists()) {
             employeeDocumentsDir.mkdirs();
         }

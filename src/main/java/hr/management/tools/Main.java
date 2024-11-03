@@ -19,7 +19,7 @@ public class Main {
 
         // 3. Asignar el nuevo vehículo al empleado con DNI 87654321B
             EmployeeManager employeeManager = new EmployeeManager( employees, vehicles);
-            boolean assigned = employeeManager.assignVehicleToEmployee("87654321B", newVehicle);
+            boolean assigned = employeeManager.assignVehicleToEmployee("87654321B", newVehicle.getPlate());
             if (assigned) {
                 System.out.println("Vehículo asignado correctamente al empleado con DNI 87654321B.");
             } else {

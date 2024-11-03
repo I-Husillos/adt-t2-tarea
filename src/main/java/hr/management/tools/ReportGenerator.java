@@ -5,13 +5,10 @@ import hr.management.model.Vehicle;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReportGenerator {
-    public static void generateReport(ArrayList<Employee> employees, ArrayList<Vehicle> vehicles, String ruta){
-        ArrayList<Employee> empleados = JsonManager.loadEmployeesFromJson("./data/employees.json");
-        ArrayList<Vehicle> vehiculos = JsonManager.loadVehiclesFromJson("./data/vehicles.json");
-
-
+    public static void generateReport(List<Employee> empleados, List<Vehicle> vehiculos, String ruta){
 
         try {
             FileWriter fileWriter = new FileWriter(ruta);
