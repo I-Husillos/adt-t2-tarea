@@ -35,7 +35,6 @@ public class JsonManager {
         }
     }
 
-
     public static boolean saveVehiclesToJson(ArrayList<Vehicle> vehicles, String ruta){
         try {
             objectMapper.writeValue(new File(ruta), vehicles);
