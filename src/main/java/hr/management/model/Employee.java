@@ -37,7 +37,7 @@ public class Employee {
 
     public void unassignVehicle(){
         if(vehiclePlate!=null && !vehiclePlate.isEmpty()){
-            this.vehiclePlate="";
+            this.vehiclePlate=null;
             System.out.println("Vehículo con matrícula " + vehiclePlate + " desasignado de " + name);
         }else{
             System.out.println(name + " no tiene un vehículo asignado.");

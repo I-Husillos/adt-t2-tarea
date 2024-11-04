@@ -44,13 +44,15 @@ public class EmployeeManager {
         return false;
     }
 
+    //Toma un dni y devuelve true si el vehículo se desasigna correctamente; false si no. Si no encuentra el empleado, imprime "Empleado no encontrado."
+
     public boolean unassignVehicleFromEmployee(String dni){
         Employee employeeDes = findEmployeeByDni(dni);
 
         if (employeeDes!=null){
             employeeDes.unassignVehicle();
             return true;
-        }else {
+        } else {
             System.out.println("Empleado no encontrado.");
         }
 
