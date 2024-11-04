@@ -8,12 +8,12 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         // 1. Cargar datos de empleados y vehículos desde JSON
-        ArrayList<Employee> employees = JsonManager.loadEmployeesFromJson("./data/employees.json");
-        ArrayList<Vehicle> vehicles = JsonManager.loadVehiclesFromJson("./data/vehicles.json");
+        ArrayList<Employee> employees = JsonManager.loadEmployeesFromJson("data/employees.json");
+        ArrayList<Vehicle> vehicles = JsonManager.loadVehiclesFromJson("data/vehicles.json");
 
 
         // 2. Añadir un vehículo desde el archivo newVehicle1.xml
-            Vehicle newVehicle = XmlManager.readVehicleFromXml("./data/newVehicle.xml");
+            Vehicle newVehicle = XmlManager.readVehicleFromXml("data/newVehicle.xml");
             vehicles.add(newVehicle);
             System.out.println("Nuevo vehículo añadido desde XML: " + newVehicle);
 
@@ -35,8 +35,8 @@ public class Main {
             }
 
         // 5. Generar un informe en formato TXT utilizando ReportGenerator
-        ReportGenerator.generateReport(employees, vehicles, "./data/informe.txt");
-        System.out.println("Informe generado exitosamente en './data/informe.txt'.");
+        ReportGenerator.generateReport(employees, vehicles, "data/informe.txt");
+        System.out.println("Informe generado exitosamente en 'data/informe.txt'.");
 
         // 6. Imprimir todos los empleados con el método printAllEmployees
             System.out.println("Lista de empleados:");

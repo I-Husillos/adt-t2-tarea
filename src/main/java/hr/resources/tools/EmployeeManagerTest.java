@@ -153,7 +153,7 @@ public class EmployeeManagerTest {
         ArrayList<Vehicle> vehicles = new ArrayList<>();
 
         // Crear un directorio simulado para cada empleado
-        File employeeDocumentsDir = new File("./data/employeeDocuments");
+        File employeeDocumentsDir = new File("data/employeeDocuments");
         if (!employeeDocumentsDir.exists()) {
             employeeDocumentsDir.mkdirs();
         }

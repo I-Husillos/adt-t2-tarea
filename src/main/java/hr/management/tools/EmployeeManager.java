@@ -44,8 +44,6 @@ public class EmployeeManager {
         return false;
     }
 
-    //Toma un dni y devuelve true si el vehículo se desasigna correctamente; false si no. Si no encuentra el empleado, imprime "Empleado no encontrado."
-
     public boolean unassignVehicleFromEmployee(String dni){
         Employee employeeDes = findEmployeeByDni(dni);
 
@@ -66,7 +64,7 @@ public class EmployeeManager {
     }
 
     public void createEmployeeFolders(){
-        File folder = new File("./data/employeeDocuments");
+        File folder = new File("data/employeeDocuments");
 
         if (folder.mkdir()){
             System.out.println("Carpeta 'employeeDocuments' creada.");
@@ -89,7 +87,7 @@ public class EmployeeManager {
         Employee employee = findEmployeeByDni(dni);
         if (employee!= null){
             empleados.remove(employee);
-            deleteFolder(new File("./data/employeeDocuments/" + dni));
+            deleteFolder(new File("data/employeeDocuments/" + dni));
             System.out.println("Empleado con DNI " + dni + " eliminado de la lista.");
             System.out.println("Carpeta del empleado con DNI " + dni + " eliminada.");
         } else {
